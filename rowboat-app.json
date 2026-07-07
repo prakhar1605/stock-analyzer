@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "stock-analyzer",
+  "version": "0.3.0",
+  "description": "Zero-setup watchlist stock analyzer with keyless quotes (Yahoo/Stooq) and Google News headlines",
+  "capabilities": [],
+  "dataContracts": [
+    {
+      "file": "data.json",
+      "requiredKeys": ["watchlist"],
+      "nonEmptyArrayKeys": []
+    }
+  ]
+}

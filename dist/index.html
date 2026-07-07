@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Analyzer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">📈</span>
+        <div class="brand-text">
+          <h1>Stock Analyzer</h1>
+          <div class="subtitle">
+            <span id="marketDot" class="market-dot"></span>
+            <span id="marketStatus" class="muted">Loading market status…</span>
+          </div>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button id="refreshBtn" class="btn btn-primary" title="Refresh all quotes">
+          <span class="btn-icon">⟳</span><span class="btn-label">Refresh</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Market overview strip -->
+    <section id="overviewStrip" class="overview-strip" aria-label="Market overview"></section>
+
+    <!-- Tabs -->
+    <nav id="tabsBar" class="tabs" role="tablist" aria-label="Watchlist groups"></nav>
+
+    <!-- Add ticker (only shown on 'My list' tab) -->
+    <section id="addRow" class="add-row">
+      <input id="tickerInput" class="text-input" type="text" placeholder="Add ticker (e.g. AAPL)" maxlength="12" autocomplete="off" spellcheck="false" />
+      <button id="addBtn" class="btn btn-primary">Add</button>
+    </section>
+
+    <!-- Top movers + Sort -->
+    <section id="controlsRow" class="controls-row">
+      <div id="moversRow" class="movers-row"></div>
+      <div class="sort-wrap">
+        <label for="sortSelect" class="muted">Sort</label>
+        <select id="sortSelect" class="text-input select-input">
+          <option value="pct-desc">% change ↓</option>
+          <option value="pct-asc">% change ↑</option>
+          <option value="name">Name (A–Z)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Trends / watchlist -->
+    <section id="trendsSection">
+      <div id="trendsLoading" class="section-loading hidden"><span class="spinner"></span> Loading quotes…</div>
+      <div id="emptyWatchlist" class="empty-state hidden">
+        <div class="empty-icon">📊</div>
+        <p><strong>Your watchlist is empty.</strong></p>
+        <p class="muted">Add a ticker above to start tracking.</p>
+      </div>
+      <ul id="watchlist" class="watchlist"></ul>
+    </section>
+
+    <footer class="footer">
+      <span class="muted">Quotes may be delayed · free sources</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

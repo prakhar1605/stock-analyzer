@@ -1,0 +1,5 @@
+data/
+node_modules/
+.rowboat-install.json
+.rowboat-publish.json
+.previous/
